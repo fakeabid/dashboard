@@ -1,0 +1,475 @@
+:root {
+  --white: #F8F8F8;
+  --grey: #d9d9d9;
+  --black: #202020;
+  --letter-space-min: 0.8px;
+  --letter-space-med: 1.2px;
+  --letter-space-max: 2px;
+  --border-radius-min: 10px;
+  --border-radius-med: 15px;
+  --border-radius-max: 20px;
+  --font-size-small: 0.8rem;
+  --font-size-normal: 1.125rem;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  font-family: 'inter tight', sans-serif;
+  letter-spacing: var(--letter-space-min);
+}
+
+input, button {
+  font-family: 'inter tight', sans-serif;
+  letter-spacing: var(--letter-space-min);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+  padding-bottom: 40px;
+}
+
+/* nature theme */
+
+#root.wallpaper-nature header, #root.wallpaper-sea header > h3, #root.wallpaper-nature .customize-wallpaper-btn {
+  background-color: #1B211A;
+}
+
+#root.wallpaper-nature .card {
+  background-color: #8BAE66;
+  color: #EBD5AB;
+}
+
+#root.wallpaper-nature .card button, #root.wallpaper-nature .card > .date-time{
+  background-color: #EBD5AB;
+  color: #1B211A;
+}
+
+/* choco theme */
+
+#root.wallpaper-choco header,#root.wallpaper-sea header > h3, #root.wallpaper-choco .customize-wallpaper-btn {
+  background-color: #3c2620;
+}
+
+#root.wallpaper-choco .card {
+  background-color: #988f8b;
+  color: #E8D1C5;
+}
+
+#root.wallpaper-choco .card button, #root.wallpaper-choco .card > .date-time{
+  background-color: #E8D1C5;
+  color: #1B211A;
+}
+
+/* sea theme */
+
+#root.wallpaper-sea header, #root.wallpaper-sea header > h3, #root.wallpaper-sea .customize-wallpaper-btn {
+  background-color: #9BB4C0;
+  color: black;
+  font-weight: 400;
+}
+
+#root.wallpaper-sea .card {
+  background-color: #A18D6D;
+  color: #E1D0B3;
+}
+
+#root.wallpaper-sea .card button, #root.wallpaper-sea .card > .date-time{
+  background-color: #E1D0B3;
+  color: #1B211A;
+}
+
+/* candy */
+
+#root.wallpaper-candy header, #root.wallpaper-candy header > h3, #root.wallpaper-candy .customize-wallpaper-btn {
+  background-color: #B77466;
+}
+
+#root.wallpaper-candy .card {
+  background-color: #957C62;
+  color: #FFE1AF;
+}
+
+#root.wallpaper-candy .card button, #root.wallpaper-candy .card > .date-time{
+  background-color: #FFE1AF;
+  color: #1B211A;
+}
+
+/**/
+
+header {
+  width: 80%;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 0 0 var(--border-radius-max) var(--border-radius-max);
+  padding: 20px;
+  text-align: center;
+  transform: translateY(-50px);
+  transition: all 0.7s ease;
+}
+
+header.show {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+header > h3 {
+  font-weight: 200;
+  font-size: var(--font-size-normal);
+  transition: all 0.7s ease;
+}
+
+main {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+section.greeting {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+section.greeting > h1 {
+  font-weight: 400;
+  font-size: 3.5rem;
+  opacity: 0.8;
+  transform: translateY(10px) scale(0.8);
+  transition: all 0.5s ease;
+}
+
+section.greeting > h1:hover {
+  opacity: 1;
+}
+
+section.greeting > h1.show {
+  opacity: 1;
+  transform: translateY(-10px) scale(1);
+}
+
+section.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px;
+  min-height: 430px;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+  transition: all 0.5s ease;
+}
+
+section.dashboard-grid.show {
+  opacity: 1;
+  transform: translateY(-10px) scale(1);
+}
+
+section.dashboard-grid > .card {
+  padding: 25px;
+  background-color: var(--white);
+  border-radius: var(--border-radius-max);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  overflow: auto;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+section.dashboard-grid > .card:hover {
+  opacity: 1;
+}
+
+section.dashboard-grid > .card.time-card {
+  grid-row: span 3;
+}
+
+section.dashboard-grid > .card.time-card > .time {
+  font-size: 8rem;
+  letter-spacing: var(--letter-space-max);
+  font-weight: 900;
+  text-shadow: 5px 6px 6.3px rgba(0, 0, 0, 0.25);
+}
+
+section.dashboard-grid > .card.time-card > .location > img {
+  margin-right: 12px;
+  margin-bottom: -3px;
+}
+
+section.dashboard-grid > .card.time-card > .date-time {
+  padding: 15px;
+  background-color: var(--grey);
+  border-radius: var(--border-radius-med);
+  width: 80%;
+}
+
+section.dashboard-grid > .card.weather-card, section.dashboard-grid > .card.todo-card {
+  justify-content: space-between;
+  grid-row: span 2;
+}
+
+section.dashboard-grid > .card.weather-card {
+  background: linear-gradient(0deg,rgba(135, 206, 235, 1) 50%, rgba(248, 248, 248, 1) 100%);
+  color: var(--black) !important;
+}
+
+section.dashboard-grid > .card.weather-card.no-weather {
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.weather-skeleton {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.circle {
+  height: 1.5em; /* ≈ text line height */
+  width: 1.5em;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+
+  animation: pulse 0.3s ease-in-out infinite;
+}
+
+section.dashboard-grid > .card.weather-card > h4, section.dashboard-grid > .card.todo-card > h4 {
+  font-size: var(--font-size-small);
+  font-weight: 300;
+}
+
+section.dashboard-grid > .card.weather-card > img {
+  width: 50%;
+  transition: all 0.5s ease;
+}
+
+section.dashboard-grid > .card.weather-card > img:hover {
+  transform: scale(1.1);
+}
+
+section.dashboard-grid > .card.weather-card > .description {
+  font-weight: 400;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  letter-spacing: var(--letter-space-max);
+}
+
+section.dashboard-grid > .card.weather-card > .temperature {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-right: -15px;
+}
+
+section.dashboard-grid > .card.todo-card {
+  position: relative;
+}
+
+section.dashboard-grid > .card.todo-card > .clear-btn {
+  border: none;
+  padding: 8px;
+  border-radius: var(--border-radius-min);
+  position: absolute;
+  font-size: var(--font-size-small);
+  color: var(--white) !important;
+  background-color: rgb(133, 47, 47) !important;
+  top: 0;
+  right: 0;
+  transition: all 0.2s ease;
+}
+
+section.dashboard-grid > .card.todo-card > .clear-btn:hover {
+  transform: scale(1.05);
+}
+
+section.dashboard-grid > .card.todo-card > .clear-btn > i:hover {
+  cursor: pointer;
+}
+
+section.dashboard-grid > .card.todo-card > ul {
+  flex: 1;
+  text-align: left;
+  width: 100%;
+  padding-left: 0px;
+  margin-top: 20px;
+  list-style: none;
+  font-size: 0.9rem;
+  max-height: 122px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+section.dashboard-grid > .card.todo-card > ul > li {
+  margin-bottom: 15px;
+  padding-left: 1rem;
+  line-height: 1.2rem;
+  transition: all 0.5s ease;
+}
+
+section.dashboard-grid > .card.todo-card > ul > li > span {
+  margin-left: 10px;
+}
+
+section.dashboard-grid > .card.todo-card > ul > li.done {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+section.dashboard-grid > .card.todo-card > ul > li.done > span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+section.dashboard-grid > .card.todo-card > ul > li > button {
+  border: none;
+  border-radius: 30%;
+  background-color: var(--grey);
+}
+
+section.dashboard-grid > .card.todo-card > form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+section.dashboard-grid > .card.todo-card > form.add-todo-form > input, section.dashboard-grid > .card.todo-card > form.add-todo-form > button {
+  border: none;
+  padding: 10px;
+  border-radius: var(--border-radius-min);
+}
+
+section.dashboard-grid > .card.todo-card > form.add-todo-form > input {
+  flex: 1;
+  margin-right: 5px;
+  border: 1px solid var(--grey);
+}
+
+section.dashboard-grid > .card.todo-card > form.add-todo-form > input:focus {
+  outline: none;
+}
+
+section.dashboard-grid > .card.todo-card > form.add-todo-form > button {
+  background-color: var(--black) !important;
+  color: var(--white) !important;
+  transition: all 0.2s ease;
+}
+
+section.dashboard-grid > .card.todo-card > form.add-todo-form > button:hover {
+  opacity: 0.95;
+}
+
+section.dashboard-grid > .card.quote-card {
+  position: relative;
+  grid-column: span 2;
+  line-height: 1.2rem;
+  font-weight: 300;
+  font-size: 0.8rem;
+  text-align: left;
+  overflow: visible;
+}
+
+.quote-skeleton {
+  width: 100%;
+}
+
+.line {
+  height: 1em; /* ≈ text line height */
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 0.6em;
+
+  animation: pulse 0.3s ease-in-out infinite;
+}
+
+/* last line shorter */
+.line.short {
+  width: 60%;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+section.dashboard-grid > .card.quote-card > span {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;      /* number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+section.dashboard-grid > .card.quote-card > img {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+}
+
+button.customize-wallpaper-btn {
+  font-weight: 200;
+  font-size: 0.9rem;
+  padding: 18px;
+  min-width: 400px;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: var(--border-radius-max);
+  border: none;
+  background-color: var(--black);
+  color: var(--white);
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  opacity: 0;
+  transform: translateY(10px) scale(0.8);
+  transition: 0.5s ease;
+}
+
+button.customize-wallpaper-btn.show {
+  opacity: 1;
+  transform: translateY(0px) scale(1);
+}
+
+button.customize-wallpaper-btn:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+@media screen and (max-width: 600px) {
+
+header {
+  width: 90%;
+  border-radius: var(--border-radius-max);
+  margin-top: 15px;
+}
+
+}
