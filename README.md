@@ -3,12 +3,17 @@
 A personal dashboard built with React.
 
 ## Features
-- Time Widget
-- Weather widget
-- Todo list
-- Random Quote Widget
-- Theme Changer
-- LocalStorage persistence
+🕒 Live time widget
+
+🌦 Weather widget (OpenWeather API)
+
+✅ Todo list with persistence
+
+💬 Random quote widget (Quoteshub API)
+
+🎨 Theme changer
+
+💾 Data saved using LocalStorage
 
 ## Tech Stack
 - React
