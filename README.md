@@ -3,9 +3,11 @@
 A personal dashboard built with React.
 
 ## Features
+- Time Widget
 - Weather widget
 - Todo list
-- Theme toggle
+- Random Quote Widget
+- Theme Changer
 - LocalStorage persistence
 
 ## Tech Stack
@@ -13,6 +15,7 @@ A personal dashboard built with React.
 - JavaScript
 - CSS
 - OpenWeather API
+- Quoteshub API
 
 ## Setup
 1. Clone the repo
